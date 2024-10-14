@@ -1,0 +1,48 @@
+Array
+(
+    [roomId] => 1
+    [roomName] => Couple's Suite
+    [subcategory] => 
+    [roomPrice] => 4200.00
+    [roomCapacity] => 2
+    [roomDescription] => A bright yellow room with cheerful vibes.
+    [roomInclusions] => 0
+)
+Array
+(
+    [roomImages] => Array
+        (
+            [name] => Array
+                (
+                    [0] => Screenshot 2024-10-01 171219.png
+                )
+
+            [full_path] => Array
+                (
+                    [0] => Screenshot 2024-10-01 171219.png
+                )
+
+            [type] => Array
+                (
+                    [0] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp\tmp\php64CA.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 22962
+                )
+
+        )
+
+)
+Failed to upload: Screenshot 2024-10-01 171219.png

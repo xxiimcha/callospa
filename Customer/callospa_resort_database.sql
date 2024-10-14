@@ -1,0 +1,403 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 09, 2024 at 08:20 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `callospa_resort_database`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `amenities`
+--
+
+CREATE TABLE `amenities` (
+  `id` int(11) NOT NULL,
+  `amenities_categories` varchar(255) NOT NULL,
+  `amenities_categories_image_url` varchar(255) DEFAULT NULL,
+  `amenities_categories_description` text DEFAULT NULL,
+  `amenities_subcategory_name` varchar(255) NOT NULL,
+  `amenities_subcategory_image_url` varchar(255) DEFAULT NULL,
+  `amenities_subcategory_description` text DEFAULT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `duration` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `amenities`
+--
+
+INSERT INTO `amenities` (`id`, `amenities_categories`, `amenities_categories_image_url`, `amenities_categories_description`, `amenities_subcategory_name`, `amenities_subcategory_image_url`, `amenities_subcategory_description`, `price`, `duration`) VALUES
+(1, 'Massage Therapies', 'images/1.jpg', 'Soothe your muscles and relax your mind with our specialized massage therapies.', 'Total Body Pampering', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'Experience the ultimate relaxation with a full-body massage that targets every muscle.', 2500.00, '1 hour'),
+(2, 'Massage Therapies', 'images/1.jpg', 'Soothe your muscles and relax your mind with our specialized massage therapies.', 'Signature Massage', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'Our unique Signature Massage is tailored to your body\'s needs, ensuring total comfort and relief.', 500.00, '1 hour'),
+(3, 'Massage Therapies', 'images/1.jpg', 'Soothe your muscles and relax your mind with our specialized massage therapies.', 'Signature Massage Child', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'A gentle massage for children, designed to relax and rejuvenate young muscles.', 300.00, '30 mins'),
+(4, 'Massage Therapies', 'images/1.jpg', 'Soothe your muscles and relax your mind with our specialized massage therapies.', 'Ventosa Massage', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'A therapeutic massage using glass cups to create suction, relieving muscle tension.', 1000.00, '1 hour'),
+(5, 'Massage Therapies', 'images/1.jpg', 'Soothe your muscles and relax your mind with our specialized massage therapies.', 'Stone Massage', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'Relax with the heat and pressure of smooth, warm stones to ease tension in your muscles.', 1500.00, '1 hour'),
+(6, 'Massage Therapies', 'images/1.jpg', 'Soothe your muscles and relax your mind with our specialized massage therapies.', 'Mandara Twins', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'A luxurious dual therapist massage, providing simultaneous relaxation for twice the comfort.', 1500.00, '1.5 hours'),
+(7, 'Body Treatments', 'images/1.jpg', 'Rejuvenate your skin and senses with our luxurious body treatments.', 'Body Scrub', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'Revitalize your skin with an exfoliating body scrub that leaves you feeling refreshed and glowing.', 650.00, '1 hour'),
+(8, 'Body Treatments', 'images/1.jpg', 'Rejuvenate your skin and senses with our luxurious body treatments.', 'Ear Candling', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'A calming ear cleaning therapy that helps remove impurities and relax the mind.', 350.00, '1 hour'),
+(9, 'Foot Treatment', 'images/1.jpg', 'Pamper your feet with our soothing foot treatments.', 'Malaysian Foot Reflex', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'A traditional Malaysian reflexology treatment to alleviate foot pain and improve circulation.', 300.00, '30-45 mins'),
+(10, 'Foot Treatment', 'images/1.jpg', 'Pamper your feet with our soothing foot treatments.', 'Foot Reflex', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'A therapeutic foot massage that focuses on pressure points to relieve tension and stress.', 500.00, '1 hour'),
+(11, 'Foot Treatment', 'images/1.jpg', 'Pamper your feet with our soothing foot treatments.', 'Foot Spa', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'Enjoy a relaxing foot spa session that soothes tired feet and softens the skin.', 430.00, '1 hour'),
+(12, 'Hair Treatments', 'images/1.jpg', 'Transform your hair with our restorative hair treatments.', 'Hair Spa', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'A deep conditioning treatment to nourish and revitalize dry, damaged hair.', 350.00, '1 hour'),
+(13, 'Nail Services', 'images/1.jpg', 'Treat yourself to our professional nail services.', 'Manicure', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'Get perfectly polished nails with our luxurious manicure service.', 350.00, '1 hour'),
+(14, 'Nail Services', 'images/1.jpg', 'Treat yourself to our professional nail services.', 'Pedicure', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'Pamper your feet with a soothing pedicure, leaving your nails polished and beautiful.', 400.00, '1 hour'),
+(15, 'Nail Services', 'images/1.jpg', 'Treat yourself to our professional nail services.', 'Mani + Pedi', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'The ultimate nail treatment combo, providing a full manicure and pedicure experience.', 650.00, '1 hour'),
+(16, 'Special Packages', 'images/1.jpg', 'Explore our exclusive special packages designed for comprehensive relaxation.', 'Affordable Escape', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'A perfect getaway at an affordable price, combining multiple relaxing treatments.', 1200.00, '1 hour'),
+(17, 'Special Packages', 'images/1.jpg', 'Explore our exclusive special packages designed for comprehensive relaxation.', 'Kiddie Package', 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', 'A delightful package designed for children, offering a safe and fun relaxation experience.', 750.00, '1 hour');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` int(11) NOT NULL,
+  `venue` varchar(255) DEFAULT NULL,
+  `event_type` varchar(255) DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `inclusions` text DEFAULT NULL,
+  `guests` int(11) DEFAULT NULL,
+  `event_images` text DEFAULT NULL,
+  `check_in_time` time DEFAULT NULL,
+  `check_out_time` time DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `venue`, `event_type`, `price`, `description`, `inclusions`, `guests`, `event_images`, `check_in_time`, `check_out_time`) VALUES
+(1, 'Exclusive Resort Venue', 'Day Resort Grounds Exclusive', 15000.00, 'Treat yourself and your friends to a relaxing day at our beautiful resort. Enjoy exclusive access for endless swimming and lounging perfect for creating unforgettable memories together.', 'Exclusive access to resort facilities, unlimited swimming, lounging space', 40, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', '08:00:00', '16:00:00'),
+(2, 'Exclusive Resort Venue', 'Night Resort Grounds Exclusive', 15000.00, 'Escape to a magical night at our resort! Swim and lounge under the stars, setting the stage for laughter and bonding with your loved ones.', 'Exclusive access to resort facilities, unlimited swimming, lounging space', 40, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', '17:00:00', '07:00:00'),
+(3, 'Reception Hall Venue', '1 Day with Reception Hall', 47200.00, 'Host an unforgettable event in our exclusive reception hall. Enjoy a seamless experience with the perfect setting for your special occasion.', 'Access to reception hall and swimming pool, setup and teardown time', 250, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', '08:00:00', '16:00:00'),
+(4, 'Reception Hall Venue', '24-Hour with Reception Hall', 73000.00, 'Make your celebration truly memorable with a full day in our reception hall. It\'s the ideal backdrop for your special moments.', 'Access to reception hall, swimming pool, room options, complimentary spa pampering', 250, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', '08:00:00', '08:00:00'),
+(5, 'Conference Room Venue', '1 Day with Conference Room', 47200.00, 'Bring your ideas to life in our dedicated conference room. Enjoy a productive day in a space designed for collaboration and creativity.', 'Access to conference room and swimming pool, setup and teardown time', 75, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', '08:00:00', '16:00:00'),
+(6, 'Conference Room Venue', '24-Hour with Conference Room', 73000.00, 'Transform your next event with a full day in our conference room. It\'s the perfect place to host meetings or gatherings with a touch of luxury.', 'Access to conference room, swimming pool, room options, complimentary spa pampering', 75, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg', '08:00:00', '08:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `packages`
+--
+
+CREATE TABLE `packages` (
+  `id` int(11) NOT NULL,
+  `package_name` varchar(255) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `check_in_time` time NOT NULL,
+  `check_out_time` time NOT NULL,
+  `duration` varchar(50) NOT NULL,
+  `description` text NOT NULL,
+  `inclusions` text NOT NULL,
+  `guests` int(11) NOT NULL,
+  `images` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `packages`
+--
+
+INSERT INTO `packages` (`id`, `package_name`, `price`, `check_in_time`, `check_out_time`, `duration`, `description`, `inclusions`, `guests`, `images`) VALUES
+(1, 'Couple\'s Blissfull Overnight Package', 10000.00, '20:00:00', '06:00:00', '10 hours', 'An exclusive romantic overnight getaway, offering luxurious relaxation and pampering in a private couple’s suite.', 'Room: Couple\'s Suite with Couple\'s Lunch Spa Services: Signature Massage, Stone Massage, Ventosa Massage Complementary: Free Use of Swimming Pool', 2, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(2, 'Couple\'s Overnight Package', 6500.00, '20:00:00', '06:00:00', '10 hours', 'Enjoy a cozy overnight stay with access to relaxing spa services and a private couple’s suite.', 'Room: Couple\'s Suite with Couple\'s Lunch\r\nSpa Services: Signature Massage, Total Body Pampering\r\nComplementary: Free Use of Swimming Pool', 2, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(3, 'Couple\'s Day Sanctuary Package', 5800.00, '08:00:00', '18:00:00', '10 hours', 'A perfect daytime retreat for couples looking to unwind and rejuvenate together.', 'Room: Couple\'s Suite with Couple\'s Lunch\r\nSpa Services: Body Scrub, Signature Massage\r\nComplementary: Free Use of Swimming Pool', 2, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(4, 'Day Resort Grounds Exclusive', 5800.00, '08:00:00', '18:00:00', '10 hours', 'Exclusive access to the resort grounds during the day for complete privacy and relaxation.', 'Access to all resort grounds amenities\r\n', 40, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(5, 'Night Resort Grounds Exclusive', 5800.00, '20:00:00', '06:00:00', '10 hours', 'Experience a serene and private evening on the resort grounds with exclusive access to all facilities.', 'Access to all resort grounds amenities', 40, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(6, '1 Day with Reception Hall', 5800.00, '08:00:00', '16:00:00', '8 hours', 'A spacious venue for day events, offering access to the reception hall and resort facilities.', 'Access to Reception Hall\r\nRoom Good for 10 Pax (Family Room)\r\nFree use of Swimming Pool', 250, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(7, '24 Hour with Reception Hall', 5800.00, '08:00:00', '08:00:00', '24 hours', 'Host an event with full-day access to the reception hall and enjoy all resort amenities for a full 24 hours.', 'Access to Reception Hall\r\nRoom Good for 6 Pax (Blue Room)\r\nRoom Good for 10 Pax (Family Room)\r\nRoom Good for 20 Pax (Tatami Room)\r\nRoom Good for 2 Pax (Couple\'s Suite)\r\nFree use of Swimming Pool', 250, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(8, '1 Day with Conference Room', 5800.00, '08:00:00', '16:00:00', '8 hours', 'A professional setting for day conferences, with access to the conference room and resort amenities.', 'Access to Conference Room\r\nRoom Good for 10 Pax (Family Room)\r\nFree use of Swimming Pool', 75, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(9, '24 Hour with Conference Room', 5800.00, '08:00:00', '08:00:00', '24 hours', 'Full-day access to the conference room for meetings or events, including resort amenities for a complete 24 hours.', 'Access to Conference Room\r\nRoom Good for 6 Pax (Blue Room)\r\nRoom Good for 10 Pax (Family Room)\r\nRoom Good for 20 Pax (Tatami Room)\r\nRoom Good for 2 Pax (Couple\'s Suite)\r\nFree use of Swimming Pool', 75, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(10, 'Relax and Renew Package', 2800.00, '08:00:00', '10:00:00', '2 hours', 'A refreshing package that combines massage, body scrub, and foot reflex.', 'Stone Massage, Body Scrub, Foot Reflex', 1, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(11, 'Pamper Yourself Package', 3200.00, '09:00:00', '12:00:00', '3 hours', 'Treat yourself with a massage, hair spa, and manicure for a perfect day.', 'Total Body Pampering, Hair Spa, Manicure', 1, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(12, 'Luxury Indulgence Package', 4500.00, '10:00:00', '14:00:00', '4 hours', 'Indulge in luxury with a ventosa massage, foot spa, pedicure, and hair spa.', 'Ventosa Massage, Foot Spa, Pedicure, Hair Spa', 1, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(13, 'Couple’s Bliss Package', 5000.00, '15:00:00', '17:30:00', '2.5 hours', 'A relaxing package for couples including massage and mani-pedi.', 'Signature Massage, Body Scrub, Mani + Pedi', 1, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(14, 'Rejuvenation Retreat', 3700.00, '11:00:00', '14:00:00', '3 hours', 'Rejuvenate with a Mandara massage, body scrub, and foot reflex.', 'Mandara Twins, Body Scrub, Foot Reflex', 1, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(15, 'Total Wellness Experience', 3800.00, '13:00:00', '16:30:00', '3.5 hours', 'A complete wellness experience with ear candling, hair spa, foot spa, and manicure.', 'Ear Candling, Hair Spa, Foot Spa, Manicure', 1, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pending_amenity_reservations`
+--
+
+CREATE TABLE `pending_amenity_reservations` (
+  `reservation_id` int(11) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `middle_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `contact_number` varchar(50) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `handle` varchar(100) DEFAULT NULL,
+  `sources` set('Facebook','Word of Mouth','Returning Customer','Google','Others') DEFAULT NULL,
+  `source_other` varchar(255) DEFAULT NULL,
+  `package_category` varchar(50) NOT NULL,
+  `package` varchar(50) NOT NULL,
+  `check_in_date` date NOT NULL,
+  `check_in_time` time NOT NULL,
+  `check_out_time` time NOT NULL,
+  `guests` int(11) DEFAULT NULL,
+  `total_cost` decimal(10,2) NOT NULL,
+  `deposit_amount` decimal(10,2) NOT NULL,
+  `remaining_balance` decimal(10,2) NOT NULL,
+  `payment_method` enum('BDO') NOT NULL,
+  `proof_of_payment` varchar(50) NOT NULL,
+  `reservation_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pending_event_reservations`
+--
+
+CREATE TABLE `pending_event_reservations` (
+  `reservation_id` int(11) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `middle_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `contact_number` varchar(255) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `handle` varchar(100) DEFAULT NULL,
+  `sources` set('Facebook','Word of Mouth','Returning Customer','Google','Others') DEFAULT NULL,
+  `source_other` varchar(255) DEFAULT NULL,
+  `package_category` varchar(50) NOT NULL,
+  `package` varchar(50) NOT NULL,
+  `event_type` varchar(50) NOT NULL,
+  `check_in_date` date NOT NULL,
+  `check_out_date` date NOT NULL,
+  `check_in_time` time NOT NULL,
+  `check_out_time` time NOT NULL,
+  `guests` int(11) NOT NULL,
+  `additional_guest` int(11) DEFAULT 0,
+  `catering_preference` varchar(50) NOT NULL,
+  `total_cost` decimal(10,2) NOT NULL,
+  `deposit_amount` decimal(10,2) NOT NULL,
+  `remaining_balance` decimal(10,2) NOT NULL,
+  `payment_method` enum('BDO') NOT NULL,
+  `proof_of_payment` varchar(50) NOT NULL,
+  `reservation_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pending_package_reservations`
+--
+
+CREATE TABLE `pending_package_reservations` (
+  `reservation_id` int(11) NOT NULL,
+  `first_name` varchar(100) NOT NULL,
+  `middle_name` varchar(100) DEFAULT NULL,
+  `last_name` varchar(100) NOT NULL,
+  `contact_number` int(15) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `handle` varchar(100) DEFAULT NULL,
+  `sources` set('Facebook','Word of Mouth','Returning Customer','Google','Others') DEFAULT NULL,
+  `source_other` varchar(255) DEFAULT NULL,
+  `package` varchar(100) NOT NULL,
+  `check_in_date` date NOT NULL,
+  `check_out_date` date NOT NULL,
+  `check_in_time` time DEFAULT NULL,
+  `check_out_time` time DEFAULT NULL,
+  `guests` int(11) NOT NULL,
+  `additional_guest` int(11) DEFAULT NULL,
+  `total_cost` decimal(10,2) NOT NULL,
+  `deposit_amount` decimal(10,2) NOT NULL,
+  `remaining_balance` decimal(10,2) NOT NULL,
+  `payment_method` enum('BDO') NOT NULL,
+  `proof_of_payment` varchar(255) NOT NULL,
+  `reservation_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pending_room_reservations`
+--
+
+CREATE TABLE `pending_room_reservations` (
+  `reservation_id` int(11) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `middle_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `contact_number` int(15) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `handle` varchar(100) DEFAULT NULL,
+  `sources` set('Facebook','Word of Mouth','Returning Customer','Google','Others') DEFAULT NULL,
+  `source_other` varchar(255) DEFAULT NULL,
+  `room` varchar(50) NOT NULL,
+  `check_in_date` date NOT NULL,
+  `check_out_date` date NOT NULL,
+  `check_in_time` time DEFAULT NULL,
+  `check_out_time` time DEFAULT NULL,
+  `guests` int(11) NOT NULL,
+  `additional_guest` int(11) DEFAULT NULL,
+  `total_cost` decimal(10,2) NOT NULL,
+  `deposit_amount` decimal(10,2) NOT NULL,
+  `remaining_balance` decimal(10,2) DEFAULT NULL,
+  `payment_method` enum('BDO') NOT NULL,
+  `proof_of_payment` varchar(50) NOT NULL,
+  `reservation_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rooms`
+--
+
+CREATE TABLE `rooms` (
+  `id` int(11) NOT NULL,
+  `room_name` varchar(255) DEFAULT NULL,
+  `subcategory_rooms` varchar(255) DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `inclusions` text DEFAULT NULL,
+  `guests` int(11) DEFAULT NULL,
+  `room-images` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `rooms`
+--
+
+INSERT INTO `rooms` (`id`, `room_name`, `subcategory_rooms`, `price`, `description`, `inclusions`, `guests`, `room-images`) VALUES
+(1, 'Couple\'s Suite', NULL, 4200.00, 'A bright yellow room with cheerful vibes.', 'Breakfast for two, complimentary wine', 2, 'images/1.jpg'),
+(2, 'Blue Room', NULL, 4200.00, 'A serene blue room with a calming ambiance.', 'Free parking, daily housekeeping', 6, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(3, 'Beige Room', NULL, 3300.00, 'A neutral beige room with a relaxing feel.', 'Complimentary snacks, free Wi-Fi', 2, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(4, 'Family Room', NULL, 7000.00, 'A spacious room ideal for families.', 'Kids eat free, late check-out', 10, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(5, 'Tatami Room', NULL, 9000.00, 'A traditional room with tatami mats for a unique experience.', 'Traditional tea set, guided tour', 20, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(6, 'Couple\'s Suite', 'Yellow Room', 3800.00, 'A bright yellow room with cheerful vibes.', 'Breakfast for two, complimentary wine', 2, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(7, 'Couple\'s Suite', 'Coffee Brown Room', 4500.00, 'A warm coffee brown room with a cozy atmosphere.', 'Complimentary chocolate, room upgrade', 2, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(8, 'Couple\'s Suite', 'Santorini White Room', 4500.00, 'A pristine white room inspired by Santorini\'s elegance.', 'Spa discount, welcome drink', 2, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(9, 'Couple\'s Suite', 'Red Room', 4500.00, 'A vibrant red room with a bold design.', 'Romantic dinner for two, late check-out', 2, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(10, 'Couple\'s Suite', 'Green Room', 4500.00, 'A refreshing green room with a calming feel.', 'Daily breakfast, guided nature walk', 2, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg'),
+(11, 'Couple\'s Suite', 'Peach Room', 5000.00, 'A soft peach room with a relaxing ambiance.', 'Complimentary dessert, early check-in', 3, 'images/1.jpg, images/1.jpg, images/1.jpg, images/1.jpg');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `amenities`
+--
+ALTER TABLE `amenities`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `packages`
+--
+ALTER TABLE `packages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pending_amenity_reservations`
+--
+ALTER TABLE `pending_amenity_reservations`
+  ADD PRIMARY KEY (`reservation_id`);
+
+--
+-- Indexes for table `pending_event_reservations`
+--
+ALTER TABLE `pending_event_reservations`
+  ADD PRIMARY KEY (`reservation_id`);
+
+--
+-- Indexes for table `pending_package_reservations`
+--
+ALTER TABLE `pending_package_reservations`
+  ADD PRIMARY KEY (`reservation_id`);
+
+--
+-- Indexes for table `pending_room_reservations`
+--
+ALTER TABLE `pending_room_reservations`
+  ADD PRIMARY KEY (`reservation_id`);
+
+--
+-- Indexes for table `rooms`
+--
+ALTER TABLE `rooms`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `amenities`
+--
+ALTER TABLE `amenities`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `packages`
+--
+ALTER TABLE `packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `pending_amenity_reservations`
+--
+ALTER TABLE `pending_amenity_reservations`
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT for table `pending_event_reservations`
+--
+ALTER TABLE `pending_event_reservations`
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `pending_package_reservations`
+--
+ALTER TABLE `pending_package_reservations`
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `pending_room_reservations`
+--
+ALTER TABLE `pending_room_reservations`
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+
+--
+-- AUTO_INCREMENT for table `rooms`
+--
+ALTER TABLE `rooms`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
